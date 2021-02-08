@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>指针思想</title>
+</head>
+
+<body>
+
+  <script>
+    /*
+    - 题目：试寻找字符串中，**连续重复**次数最多的字符
+      'aaaabbbbbcccccccccccccdddddd'
+    - 指针就是下标，不是`C`语言中的指针，`C`语言中的指针可以操作内存。`JS`中的指针就是一个下标位置。
+        i: 0
+        j: 1
+      - **如果 `i` 和 `j` 指向的字一样，那么 `i` 不动，`j` 后移**
+      - **如果 `i` 和 `j` 指向的字不一样，此时说明它们之间的字都是连续相同的，让 `i` 追上 `j`， `j` 后移**
+    */
+    var str = 'aaaabbbbbcccccccccccccdddddd'
+    // 指针
+    var i = 0 
+  </script>
+</body>
+
+</html>

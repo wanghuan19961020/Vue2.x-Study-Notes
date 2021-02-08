@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01_数据变为视图-纯DOM法</title>
+</head>
+
+<body>
+  <ul id="list"></ul>
+  <script>
+    var arr = [
+      { name: '小明', age: 12, sex: '男' },
+      { name: '小红', age: 11, sex: '女' },
+      { name: '小强', age: 13, sex: '男' },
+    ]
+    var list = document.getElementById('list')
+    for (let i = 0; i < arr.length; i++) {
+      // 每遍历一项，都要用 DOM 方法去创建 li 标签
+      let oLi = document.createElement('li')
+      // 创建 hd 这个 div
+      let hdDiv = document.createElement('div')
+      hdDiv.className = 'hd'
+      hdDiv.innerText = arr[i].name + '的基本信息'
+      oLi.appendChild(hdDiv)
+      // 创建 bd 这个 div
+      let bdDiv = document.createElement('div')
+      bdDiv.className = 'bd'
+      bdDiv.innerText = arr[i].name + '的基本信息'
+      // 创建 3 个 p
+      let p1 = document.createElement('p')
+      p1.innerText = '姓名：' + arr[i].name
+      bdDiv.appendChild(p1)
+      let p2 = document.createElement('p')
+      p2.innerText = '年龄：' + arr[i].age
+      bdDiv.appendChild(p2)
+      let p3 = document.createElement('p')
+      p3.innerText = '性别：' + arr[i].sex
+      bdDiv.appendChild(p3)
+      oLi.appendChild(bdDiv)
+      // 内部文字
+      // oLi.innerHTML = arr[i].name
+      // 创建的节点是孤儿节点，所以必须要上树才能让用户看见
+      list.appendChild(oLi)
+    }
+  </script>
+
+</body>
+
+</html>

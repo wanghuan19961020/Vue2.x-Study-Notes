@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04_数据变为视图-mustache模板引擎</title>
+  <script src="./mustache.js"></script>
+</head>
+
+<body>
+  <script>
+    var templateStr = `
+      <ul id="list">
+        {{#arr}}
+        <li>
+          <div class="hd">{{name}}的基本信息</div>
+          <div class="bd">
+            <p>姓名：{{name}}</p>
+            <p>年龄：{{age}}</p>
+            <p>性别：{{sex}}</p>
+          </div>
+        </li>
+        {{/arr}}
+      </ul>
+    `
+    var data = {
+      arr: [
+        { name: '小明', age: 12, sex: '男' },
+        { name: '小红', age: 11, sex: '女' },
+        { name: '小强', age: 13, sex: '男' },
+      ]
+    }
+    var domStr = Mustache.render(templateStr, data)
+    console.log(domStr);
+  </script>
+
+</body>
+
+</html>

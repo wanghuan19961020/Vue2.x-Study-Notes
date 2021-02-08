@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06_数据变为视图-mustache模板引擎-循环简单数组</title>
+  <script src="./mustache.js"></script>
+</head>
+
+<body>
+  <div id="container"></div>
+  <h1></h1>
+  <script>
+    var templateStr = `
+      <ul>
+        {{#arr}}
+          <li>{{.}}</li>
+        {{/arr}}  
+      </ul>
+    `
+    var data = {
+      arr: ['苹果', '梨子', '香蕉']
+    }
+    var domStr = Mustache.render(templateStr, data)
+    var container = document.getElementById('container')
+    container.innerHTML = domStr
+  </script>
+
+</body>
+
+</html>

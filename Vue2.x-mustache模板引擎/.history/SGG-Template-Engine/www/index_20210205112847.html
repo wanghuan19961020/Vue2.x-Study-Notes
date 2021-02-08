@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>你好!!!</h1>
+  <script src="xuni/bundle.js"></script>
+  <script>
+    // var templateStr = '<h1>我买了一个{{thing}}，好{{mood}}啊</h1>'
+    var templateStr = `
+      <div>
+        <ol>
+          {{#students}}
+          <li>
+            学生{{item.name}}的爱好是
+            <ol>
+              {{#item.hobbies}}
+              <li>{{.}}</li>
+              {{/item.hobbies}}
+            </ol>
+          </li>
+          {{/students}}
+        </ol>
+      </div>
+    `
+    var data = {
+      thing: '华为手机',
+      mood: '开心'
+    }
+    SGG_TemplateEngine.render(templateStr, data)
+  </script>
+</body>
+
+</html>

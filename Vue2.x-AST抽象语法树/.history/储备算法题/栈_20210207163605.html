@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>栈</title>
+</head>
+
+<body>
+  <script>
+    /*
+      - 试编写“智能重复” `smartRepeat` 函数，实现：
+        - 将 `3[abc]` 变为 `abcabcabc`
+        - 将 `3[2[a]2[b]]` 变为 `aabbaabbaabb`
+        - 将 `2[1[a]3[b]2[3[c]4[d]]]` 变为 `abbbcccddddcccddddabbbcccddddcccdddd`
+      - 不用考虑输入字符串是非法的情况，比如：
+        - `2[a3[b]]` 是错误的，应该补一个 `1` ，即 `2[1[a]3[b]]`
+        - `[abc]` 是错误的，应该补一个 `1`，即 `1[abc]`
+    */
+
+    function smartRepeat(templateStr) {
+      // 指针
+      var index = 0
+      // 2 个栈
+      // 栈1 存放数字
+      var stack1 = []
+      // 栈2 存放临时字符串
+      var stack2 = []
+      // 剩余部分
+      let rest = templateStr
+      while (index < templateStr.length - 1) {
+        rest = templateStr.substring(index)
+        // 看当前剩余部分是不是以数字开头
+        index++
+      }
+    }
+    console.log(smartRepeat('3[2[a]2[b]]'))
+  </script>
+</body>
+
+</html>

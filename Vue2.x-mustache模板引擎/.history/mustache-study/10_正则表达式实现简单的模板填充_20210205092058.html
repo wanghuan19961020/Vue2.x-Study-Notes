@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10_正则表达式实现简单的模板数据填充</title>
+</head>
+
+<body>
+  <div id="container"></div>
+
+  <script>
+    var templateStr = '<h1>我买了一个{{thing}}，好{{mood}}</h1>'
+    var data = {
+      thing: '华为手机',
+      mood: '开心'
+    }
+    console.log(templateStr.replace(/\{\{(\w+)\}\}/g, function (findStr, $1) {
+      console.log(findStr, $1) // {{thing}} thing
+      return '☆'
+    }))
+    // var domStr = Mustache.render(templateStr, data)
+    // var container = document.getElementById('container')
+    // container.innerHTML = domStr
+  </script>
+
+</body>
+
+</html>

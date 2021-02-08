@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>递归深入1</title>
+</head>
+
+<body>
+  <script>
+    //  试输出斐波那契数列的前10项，即1、1、2、3、5、8、13、21、34、55
+    // 创建一个函数，功能是返回下标为n的这项的数字
+    function fib(n) {
+      // 看下标 n 是不是 0 或者是不是 1，如果是，就返回常数1
+      // 如果不是 就递归
+      return n === 0 || n === 1 ? 1 : fib(n - 1) + fib(n - 2)
+    }
+    console.log(fib(6)) // 13
+  </script>
+</body>
+
+</html>
